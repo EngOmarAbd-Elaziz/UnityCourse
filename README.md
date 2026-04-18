@@ -140,7 +140,7 @@ This project demonstrates experience in:
 
 ## 🧠 Notes
 
-Developed as part of a Unity learning journey inspired by [**Code Monkey**](www.youtube.com/@CodeMonkeyUnity), focusing on building real production-style gameplay systems.
+Developed as part of a Unity learning journey inspired by [**Code Monkey**](https://www.youtube.com/@CodeMonkeyUnity), focusing on building real production-style gameplay systems.
 
 ---
 
