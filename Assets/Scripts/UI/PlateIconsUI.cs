@@ -26,24 +26,20 @@ public class PlateIconsUI : MonoBehaviour
 
     private void UpdateVisuals()
     {
-        foreach (Transform child in transform)
+        for (int i = transform.childCount - 1; i >= 0; i--)
         {
-            if (child == iconTemplate)
-            {
-                continue;
-            }
-            else
-            {
-                Destroy(child.gameObject);
-            }
+            Transform child = transform.GetChild(i);
+            if (child == iconTemplate) continue;
+            PoolManager.Instance.ReturnObject(child.gameObject);
         }
+
         foreach (KitchenObjectSO kitchenObjectSO in plateKitchenObject.GetKitchenObjectSOList())
         {
-
-            Transform iconTransform = Instantiate(iconTemplate, transform);
-            iconTransform.gameObject.SetActive(true);
+            GameObject iconObj = PoolManager.Instance.GetObject(iconTemplate.gameObject, Vector3.zero, Quaternion.identity, transform);
+            Transform iconTransform = iconObj.transform;
+            iconTransform.localPosition = Vector3.zero;
+            iconTransform.localRotation = Quaternion.identity;
             iconTransform.GetComponent<PlateIconsSingleUI>().SetKitchenObjectSO(kitchenObjectSO);
-
         }
     }
 }

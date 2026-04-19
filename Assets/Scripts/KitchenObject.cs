@@ -2,10 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KitchenObject : MonoBehaviour
+public class KitchenObject : MonoBehaviour, IPoolable
 {
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
     private IKitchenObjectParent kitchenObjectParent;
+
+    public virtual void OnSpawn()
+    {
+        kitchenObjectParent = null;
+    }
+
+    public virtual void OnDespawn()
+    {
+        // Override in derived types when cleanup is needed.
+    }
 
     public KitchenObjectSO GetKitchenObjectSO()
     {
@@ -40,7 +50,8 @@ public class KitchenObject : MonoBehaviour
     {
         kitchenObjectParent.ClearKitchenObject();
 
-        Destroy(gameObject);
+        // Use pooling instead of Destroy
+        PoolManager.Instance.ReturnObject(gameObject);
     }
 
 
@@ -61,10 +72,12 @@ public class KitchenObject : MonoBehaviour
 
     public static KitchenObject SpawnKitchenObject(KitchenObjectSO kitchenObjectSO, IKitchenObjectParent kitchenObjectParent)
     {
-        Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.prefab);
+        // Ensure PoolManager exists before requesting an object.
+        PoolManager.EnsureInstance();
+        GameObject obj = PoolManager.Instance.GetObject(kitchenObjectSO.prefab.gameObject, Vector3.zero, Quaternion.identity);
+        Transform kitchenObjectTransform = obj.transform;
         KitchenObject kitchenObject = kitchenObjectTransform.GetComponent<KitchenObject>();
         kitchenObject.SetKitchenObjectParent(kitchenObjectParent);
-        Debug.Log(kitchenObjectParent);
         return kitchenObject;
     }
 }

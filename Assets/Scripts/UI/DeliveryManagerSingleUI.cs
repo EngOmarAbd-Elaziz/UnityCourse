@@ -20,16 +20,19 @@ public class DeliveryManagerSingleUI : MonoBehaviour
     {
         recipeNameText.text = recipeSO.recipeName;
 
-        foreach (Transform child in IconContainer)
+        for (int i = IconContainer.childCount - 1; i >= 0; i--)
         {
+            Transform child = IconContainer.GetChild(i);
             if (child == IconTemplate) continue;
-            Destroy(child.gameObject);
+            PoolManager.Instance.ReturnObject(child.gameObject);
         }
 
         foreach (KitchenObjectSO kitchenObjectSO in recipeSO.kitchenObjectSOList)
         {
-            Transform iconTransform = Instantiate(IconTemplate, IconContainer);
-            iconTransform.gameObject.SetActive(true);
+            GameObject iconObj = PoolManager.Instance.GetObject(IconTemplate.gameObject, Vector3.zero, Quaternion.identity, IconContainer);
+            Transform iconTransform = iconObj.transform;
+            iconTransform.localPosition = Vector3.zero;
+            iconTransform.localRotation = Quaternion.identity;
             iconTransform.GetComponent<Image>().sprite = kitchenObjectSO.sprite;
         }
     }

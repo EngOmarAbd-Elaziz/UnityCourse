@@ -11,13 +11,15 @@ public class PlayerController : MonoBehaviour, IKitchenObjectParent
     [SerializeField] private GameInput gameInput;
     [SerializeField] private float interactDistance = 2f;
     [SerializeField] private LayerMask countersLayerMask;
+    [SerializeField] private Vector3 offset = new Vector3(0, 1f, 0);
+    [SerializeField] private Transform kitchenObjectHoldPoint;
     private bool isWalking;
     private Vector3 lastInteractDir;
     private BaseCounter selectedCounter;
     private KitchenObject kitchenObject;
 
-    private Vector3 offset = new Vector3(0, 1f, 0);
-    [SerializeField] private Transform kitchenObjectHoldPoint;
+    private float interactionCheckTimer = 0f;
+    private const float interactionCheckInterval = 0.1f;
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
     public class OnSelectedCounterChangedEventArgs : EventArgs
     {
@@ -75,7 +77,12 @@ public class PlayerController : MonoBehaviour, IKitchenObjectParent
     private void Update()
     {
         HandleMovement();
-        HandleInteractions();
+        interactionCheckTimer += Time.deltaTime;
+        if (interactionCheckTimer >= interactionCheckInterval)
+        {
+            interactionCheckTimer = 0f;
+            HandleInteractions();
+        }
     }
 
     public bool IsWalking()

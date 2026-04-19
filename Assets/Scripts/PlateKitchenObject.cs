@@ -19,6 +19,16 @@ public class PlateKitchenObject : KitchenObject
     {
         kitchenObjectSOList = new List<KitchenObjectSO>();
     }
+
+    public override void OnSpawn()
+    {
+        base.OnSpawn();
+        if (kitchenObjectSOList != null)
+        {
+            kitchenObjectSOList.Clear();
+        }
+    }
+
     public bool TryAddIngredient(KitchenObjectSO kitchenObjectSO)
     {
         if (!validKitchenObjectSOList.Contains(kitchenObjectSO))
