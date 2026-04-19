@@ -24,10 +24,11 @@ public class PlatesCounterVisual : MonoBehaviour
 
     private void PlatesCounter_OnPlateSpawned(object sender, System.EventArgs e)
     {
-        Transform plateVisualTransform = Instantiate(plateVisualPrefab, counterTopPoint);
+        GameObject plateObj = PoolManager.Instance.GetObject(plateVisualPrefab.gameObject, counterTopPoint.position, counterTopPoint.rotation, counterTopPoint);
+        Transform plateVisualTransform = plateObj.transform;
 
         float plateOffsetY = 0.1f;
-        plateVisualTransform.localPosition = new Vector3(0, plateOffsetY * plateVisualGameObjectList.Count, 0); //what is count?
+        plateVisualTransform.localPosition = new Vector3(0, plateOffsetY * plateVisualGameObjectList.Count, 0);
 
         plateVisualGameObjectList.Add(plateVisualTransform.gameObject);
     }
@@ -36,7 +37,7 @@ public class PlatesCounterVisual : MonoBehaviour
     {
         GameObject plateGameObject = plateVisualGameObjectList[plateVisualGameObjectList.Count - 1];
         plateVisualGameObjectList.Remove(plateGameObject);
-        Destroy(plateGameObject);
+        PoolManager.Instance.ReturnObject(plateGameObject);
     }
 
 }

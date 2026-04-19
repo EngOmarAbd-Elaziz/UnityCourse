@@ -33,18 +33,21 @@ public class DeliveryManagerUI : MonoBehaviour
 
     private void UpdateVisual()
     {
-        foreach (Transform child in container)
+        for (int i = container.childCount - 1; i >= 0; i--)
         {
+            Transform child = container.GetChild(i);
             if (child == recipeTemplate) continue;
-            Destroy(child.gameObject);
+            PoolManager.Instance.ReturnObject(child.gameObject);
         }
 
         foreach (RecipeSO recipeSO in DeliveringManager.Instance.GetWaitingRecipeSOList())
         {
-            Transform recipeTransform = Instantiate(recipeTemplate, container);
+            GameObject recipeObj = PoolManager.Instance.GetObject(recipeTemplate.gameObject, Vector3.zero, Quaternion.identity, container);
+            Transform recipeTransform = recipeObj.transform;
+            recipeTransform.localPosition = Vector3.zero;
+            recipeTransform.localRotation = Quaternion.identity;
             recipeTransform.gameObject.SetActive(true);
             recipeTransform.GetComponent<DeliveryManagerSingleUI>().SetRecipeSO(recipeSO);
-
         }
     }
 }

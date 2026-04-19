@@ -14,7 +14,6 @@ public class DeliveringManager : MonoBehaviour
 
     private List<RecipeSO> waitingRecipeSOList;
 
-    private float spawnRecipeTimer = 0.0f;
     private float spawnRecipeTimerMax = 3f;
     private int waitingRecipesMax = 4;
     private int successfulRecipesAmount;
@@ -29,13 +28,16 @@ public class DeliveringManager : MonoBehaviour
         waitingRecipeSOList = new List<RecipeSO>();
     }
 
-    private void Update()
+    private void Start()
     {
-        spawnRecipeTimer -= Time.deltaTime;
-        if (spawnRecipeTimer <= 0.0f)
-        {
-            spawnRecipeTimer = spawnRecipeTimerMax;
+        StartCoroutine(SpawnRecipeCoroutine());
+    }
 
+    private System.Collections.IEnumerator SpawnRecipeCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(spawnRecipeTimerMax);
             if (KitchenGameManager.Instance.IsGamePlaying() && waitingRecipeSOList.Count < waitingRecipesMax)
             {
                 RecipeSO waitingRecipeSO = recipeListSO.recipeSOList[UnityEngine.Random.Range(0, recipeListSO.recipeSOList.Count)];
@@ -43,7 +45,6 @@ public class DeliveringManager : MonoBehaviour
 
                 OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
             }
-
         }
     }
 

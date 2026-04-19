@@ -5156,6 +5156,7 @@ MonoBehaviour:
   countersLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  offset: {x: 0, y: 1, z: 0}
   kitchenObjectHoldPoint: {fileID: 846988864}
 --- !u!114 &924855730
 MonoBehaviour:
