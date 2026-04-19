@@ -14,20 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.01
   subtype: kitchenchaos
-  lastShownTimestamp: 1776206608
+  lastShownTimestamp: 1776600633
   lastUpdateResponse:
     version: 1.01
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1776206609
+  checkedLastUpdateTimestamp: 1776600633
   lastQOTDResponse:
-    questionId: 291
-    questionText: The Profiler is useful for...
-    answerA: Balancing difficulty
-    answerB: Level Design
-    answerC: Indentifying performance bottlenecks
+    questionId: 293
+    questionText: 'What is the position of the transform after running this code?
+
+      <p>Vector3
+      targetPosition = new Vector3(10, 0, 0);</p>
+
+      <p>transform.position =
+      targetPosition;</p>
+
+      <p>targetPosition.x = 20;</p>'
+    answerA: (10, 0, 0)
+    answerB: (20, 0, 0)
+    answerC: Unknown
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1776206609
+  lastQotdTimestamp: 1776600633
   lastDynamicHeaderResponse:
     topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/codeMonkeyToolkit50Off.png
     topText: My Toolkit is 50% OFF! 40+ Tools and Elements to help you make games
@@ -35,19 +43,19 @@ MonoBehaviour:
     topLink: toolkit
     bottomText: My 10+ Years of C# Knowledge in 1 Course!
     bottomLink: csharpcourse
-  lastDynamicHeaderTimestamp: 1776206609
+  lastDynamicHeaderTimestamp: 1776600633
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1776206609
+  websiteLatestMessageTimestamp: 1776600633
   websiteLatestVideos:
     videos:
+    - youTubeId: B82lo8t4IHs
+      title: TOP 10 FREE NEW Assets APRIL 2026!
+    - youTubeId: xLH5H6aWZHo
+      title: Every game is 90% THE SAME!
     - youTubeId: IkYt5CqoAoY
       title: TOOLS to help you make games BETTER and FASTER!
     - youTubeId: MYDfoKJ6-dw
       title: Will this engine COMPETE with Unity?
-    - youTubeId: 1GzNFSVk63M
-      title: TOP 10 NEW Games, Made with Unity! (MARCH 2026)
-    - youTubeId: nL-_srwBYdU
-      title: Can you solve this Game Dev Challenge?
-  websiteLatestVideosTimestamp: 1776206609
+  websiteLatestVideosTimestamp: 1776600633

@@ -103,30 +103,30 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Interact"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""109428d0-af65-45d4-ae48-5dcd6857c647"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Touch"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Interact Alternate"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""f66d2799-0241-41e8-ad5e-db8c8e03e3f5"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Touch"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Pause"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""5e64d0b5-3feb-4b31-a8d3-2a11eaf323bd"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Touch"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [

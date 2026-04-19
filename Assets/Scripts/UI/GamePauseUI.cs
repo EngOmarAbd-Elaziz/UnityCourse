@@ -9,7 +9,7 @@ public class GamePauseUI : MonoBehaviour
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button optionsButton;
-
+    [SerializeField] private Image bgImage;
 
     private void Awake()
     {
@@ -26,6 +26,7 @@ public class GamePauseUI : MonoBehaviour
         optionsButton.onClick.AddListener(() =>
         {
             Hide();
+            bgImage.gameObject.SetActive(false);
             OptionsUI.Instance.Show(Show);
         });
     }
@@ -35,15 +36,18 @@ public class GamePauseUI : MonoBehaviour
         KitchenGameManager.Instance.OnGameUnpaused += KitchenGameManager_OnGameUnpaused;
 
         Hide();
+        bgImage.gameObject.SetActive(false);
     }
 
     private void KitchenGameManager_OnGameUnpaused(object sender, EventArgs e)
     {
+        bgImage.gameObject.SetActive(false);
         Hide();
     }
 
     private void KitchenGameManager_OnGamePaused(object sender, EventArgs e)
     {
+        bgImage.gameObject.SetActive(true);
         Show();
     }
 
@@ -51,7 +55,7 @@ public class GamePauseUI : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        resumeButton.Select();
+        // resumeButton.Select();
     }
 
     private void Hide()
