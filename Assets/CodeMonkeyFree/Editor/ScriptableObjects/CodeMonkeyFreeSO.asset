@@ -14,11 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.01
   subtype: kitchenchaos
+<<<<<<< Updated upstream
   lastShownTimestamp: 1776600633
   lastUpdateResponse:
     version: 1.01
     versionUrl: https://unitycodemonkey.com
   checkedLastUpdateTimestamp: 1776600633
+=======
+  lastShownTimestamp: 1776620738
+  lastUpdateResponse:
+    version: 1.01
+    versionUrl: https://unitycodemonkey.com
+  checkedLastUpdateTimestamp: 1776620738
+>>>>>>> Stashed changes
   lastQOTDResponse:
     questionId: 293
     questionText: 'What is the position of the transform after running this code?
@@ -35,7 +43,11 @@ MonoBehaviour:
     answerC: Unknown
     answerD: 
     answerE: 
+<<<<<<< Updated upstream
   lastQotdTimestamp: 1776600633
+=======
+  lastQotdTimestamp: 1776620738
+>>>>>>> Stashed changes
   lastDynamicHeaderResponse:
     topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/codeMonkeyToolkit50Off.png
     topText: My Toolkit is 50% OFF! 40+ Tools and Elements to help you make games
@@ -43,11 +55,19 @@ MonoBehaviour:
     topLink: toolkit
     bottomText: My 10+ Years of C# Knowledge in 1 Course!
     bottomLink: csharpcourse
+<<<<<<< Updated upstream
   lastDynamicHeaderTimestamp: 1776600633
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
   websiteLatestMessageTimestamp: 1776600633
+=======
+  lastDynamicHeaderTimestamp: 1776620738
+  websiteLatestMessage:
+    text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
+      Click here!</a>
+  websiteLatestMessageTimestamp: 1776620738
+>>>>>>> Stashed changes
   websiteLatestVideos:
     videos:
     - youTubeId: B82lo8t4IHs
@@ -58,4 +78,8 @@ MonoBehaviour:
       title: TOOLS to help you make games BETTER and FASTER!
     - youTubeId: MYDfoKJ6-dw
       title: Will this engine COMPETE with Unity?
+<<<<<<< Updated upstream
   websiteLatestVideosTimestamp: 1776600633
+=======
+  websiteLatestVideosTimestamp: 1776620738
+>>>>>>> Stashed changes
