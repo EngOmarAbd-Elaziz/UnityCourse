@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Eng_Omar_Abdelaziz
-  productName: Kitchen_Chaos_Mobile
+  productName: KCMobile
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -64,7 +64,7 @@ PlayerSettings:
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
-  use32BitDisplayBuffer: 1
+  use32BitDisplayBuffer: 0
   preserveFramebufferAlpha: 0
   disableDepthAndStencilBuffers: 0
   androidStartInFullscreen: 1
@@ -300,7 +300,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: a644e8885b470a642b1f392d12aece47, type: 3}
+      m_Icon: {fileID: 2800000, guid: 0a05b4a9aa8e5dd49becedfb05f25e5f, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -466,7 +466,7 @@ PlayerSettings:
       m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: 602cb87b6a29443b8636370ea0751574, type: 3}
-      - {fileID: 2800000, guid: a644e8885b470a642b1f392d12aece47, type: 3}
+      - {fileID: 2800000, guid: 0a05b4a9aa8e5dd49becedfb05f25e5f, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2

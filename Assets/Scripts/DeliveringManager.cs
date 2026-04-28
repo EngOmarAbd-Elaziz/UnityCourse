@@ -35,9 +35,10 @@ public class DeliveringManager : MonoBehaviour
 
     private System.Collections.IEnumerator SpawnRecipeCoroutine()
     {
+        WaitForSeconds wait = new WaitForSeconds(spawnRecipeTimerMax);
         while (true)
         {
-            yield return new WaitForSeconds(spawnRecipeTimerMax);
+            yield return wait;
             if (KitchenGameManager.Instance.IsGamePlaying() && waitingRecipeSOList.Count < waitingRecipesMax)
             {
                 RecipeSO waitingRecipeSO = recipeListSO.recipeSOList[UnityEngine.Random.Range(0, recipeListSO.recipeSOList.Count)];
